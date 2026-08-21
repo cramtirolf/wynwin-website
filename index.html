@@ -1,174 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>WynWin — Business Agility &amp; AI Adoption</title>
+<meta name="description" content="WynWin advises executive teams on business agility and AI adoption across insurance, banking, pharma, telecom and government.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--ink-950:oklch(0.16 0.018 265);--ink-900:oklch(0.21 0.02 265);--ink-800:oklch(0.28 0.018 265);
+--ink-700:oklch(0.37 0.016 265);--ink-600:oklch(0.47 0.014 265);--ink-500:oklch(0.57 0.012 265);
+--ink-400:oklch(0.67 0.01 265);--ink-300:oklch(0.78 0.008 265);--ink-200:oklch(0.88 0.006 265);
+--ink-100:oklch(0.94 0.004 265);--ink-50:oklch(0.975 0.003 90);--paper:oklch(0.985 0.005 90);
+--oxblood-700:oklch(0.32 0.135 25);--oxblood-600:oklch(0.40 0.155 25);--oxblood-500:oklch(0.47 0.165 25);
+--oxblood-100:oklch(0.93 0.03 25);
+--bg-sunken:var(--ink-50);--bg-inverse:var(--ink-950);
+--text-primary:var(--ink-950);--text-secondary:var(--ink-600);--text-muted:var(--ink-400);
+--text-accent:var(--oxblood-600);--border-subtle:var(--ink-100);--border-strong:var(--ink-700);
+--accent-primary:var(--oxblood-600);--accent-primary-hover:var(--oxblood-700);
+--font-display:'Newsreader',Georgia,serif;--font-sans:'Archivo',Helvetica,Arial,sans-serif;
+--font-mono:'IBM Plex Mono',ui-monospace,monospace;
+--text-display-xl:4.25rem;--text-display-md:2rem;--text-display-sm:1.5rem;--text-body-lg:1.125rem;--text-body-md:1rem;
+--leading-tight:1.1;--leading-snug:1.3;--leading-normal:1.55;
+--radius-xs:2px;--radius-md:6px;--container-pad:clamp(24px,4vw,64px);--content-max:1120px;
+--duration-base:180ms;--ease-standard:cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--text-primary);font-family:var(--font-sans);}
+a{color:var(--text-accent);text-decoration:none;}
+a:hover{color:var(--accent-primary-hover);}
+.wrap{max-width:var(--content-max);margin:0 auto;}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-accent);margin-bottom:16px;}
+.btn{font-family:var(--font-sans);font-weight:600;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;border-radius:var(--radius-xs);border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;padding:16px 30px;transition:background var(--duration-base) var(--ease-standard),color var(--duration-base) var(--ease-standard),border-color var(--duration-base) var(--ease-standard);}
+.btn-primary{background:var(--accent-primary);color:var(--paper);}
+.btn-primary:hover{background:var(--accent-primary-hover);color:var(--paper);}
+.btn-outline{background:transparent;color:var(--text-primary);border-color:var(--border-strong);}
+.btn-outline:hover{background:var(--ink-50);}
+.btn-sm{padding:8px 16px;font-size:12px;}
+.badge{font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);border:1px solid var(--border-subtle);border-radius:var(--radius-xs);padding:5px 12px;display:inline-block;}
+.card{border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:20px 24px;background:#fff;}
+.card .card-eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-accent);margin-bottom:8px;}
+.card .card-title{font-family:var(--font-display);font-size:1.15rem;margin:0 0 6px;}
+.card p{font-family:var(--font-sans);font-size:14px;color:var(--text-secondary);margin:0;line-height:1.5;}
+.field{display:flex;flex-direction:column;gap:6px;}
+.field label{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--text-primary);}
+.field input{font-family:var(--font-sans);font-size:15px;padding:14px 16px;border:1px solid var(--ink-200);border-radius:var(--radius-xs);background:#fff;color:var(--text-primary);}
+.field input:focus{outline:none;border-color:var(--oxblood-500);box-shadow:0 0 0 3px var(--oxblood-100);}
+.wordmark{font-family:var(--font-sans);font-weight:800;font-stretch:condensed;font-size:32px;letter-spacing:-0.02em;color:var(--text-primary);}
+</style>
 </head>
 <body>
-<x-dc>
-<template id="__bundler_thumbnail" data-bg-color="#f5f1ea">
-  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <rect width="200" height="200" fill="#f5f1ea"/>
-    <text x="30" y="115" font-family="Georgia,serif" font-size="40" fill="#1a1a1a">Wyn</text>
-    <text x="30" y="155" font-family="Georgia,serif" font-size="40" fill="#7a1f1f">Win</text>
-  </svg>
-</template>
-<helmet>
-  <link rel="stylesheet" href="_ds/wynwin-branding-fcabcba5-1332-4ca0-aa86-2f6adac65e5d/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/wynwin-branding-fcabcba5-1332-4ca0-aa86-2f6adac65e5d/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/wynwin-branding-fcabcba5-1332-4ca0-aa86-2f6adac65e5d/tokens/spacing.css">
-  <link rel="stylesheet" href="_ds/wynwin-branding-fcabcba5-1332-4ca0-aa86-2f6adac65e5d/tokens/effects.css">
-  <link rel="stylesheet" href="_ds/wynwin-branding-fcabcba5-1332-4ca0-aa86-2f6adac65e5d/styles.css">
-  <script src="_ds/wynwin-branding-fcabcba5-1332-4ca0-aa86-2f6adac65e5d/_ds_bundle.js"></script>
-  <style>
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);}
-    a{color:var(--text-accent)}
-    a:hover{color:var(--accent-primary-hover)}
-  </style>
-</helmet>
 
-<div style="background:var(--paper);min-height:100%;">
+<header style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:20px var(--container-pad);border-bottom:1px solid var(--border-subtle);background:var(--paper);">
+  <a href="#home" style="display:flex;align-items:center;gap:16px;">
+    <svg width="90" height="90" viewBox="-14 -14 160 160" fill="none" aria-hidden="true">
+      <rect x="6" y="42" width="80" height="80" rx="11" stroke="#c24a3d" stroke-width="7"/>
+      <path d="M24 122 L23 132 L38 122" fill="#c24a3d"/>
+      <rect x="58" y="4" width="56" height="56" rx="8" stroke="#191c22" stroke-width="7"/>
+      <path d="M90 60 L101 60 L101 71 Z" fill="#191c22"/>
+      <rect x="44" y="-6.56" width="26.4" height="26.4" rx="6" stroke="#191c22" stroke-width="4.8"/>
+      <rect x="96" y="108" width="19.2" height="19.2" rx="4.8" stroke="#c24a3d" stroke-width="4.8"/>
+    </svg>
+    <span class="wordmark">WynWin</span>
+  </a>
+  <nav style="display:flex;gap:30px;align-items:center;">
+    <a href="#about" style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-primary);">About</a>
+    <a href="#services" style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-primary);">Services</a>
+    <a href="#results" style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-primary);">Results</a>
+    <a href="#insights" style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-primary);">Insights</a>
+    <a href="#contact"><button class="btn btn-primary btn-sm">Request the Briefing</button></a>
+  </nav>
+</header>
 
-  <header style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:20px var(--container-pad);border-bottom:1px solid var(--border-subtle);background:var(--paper);">
-    <a href="#home" style="display:flex;align-items:center;gap:16px;">
-      <img src="assets/logo-mark.svg" alt="" style="height:90px;">
-      <img src="assets/logo-wordmark.png" alt="WynWin" style="height:49px;">
-    </a>
-    <nav style="display:flex;gap:30px;align-items:center;">
-      <a href="#about" style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-primary);text-decoration:none;">About</a>
-      <a href="#services" style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-primary);text-decoration:none;">Services</a>
-      <a href="#results" style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-primary);text-decoration:none;">Results</a>
-      <a href="#insights" style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-primary);text-decoration:none;">Insights</a>
-      <a href="#contact" style="text-decoration:none;">
-        <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Button" hint-size="auto,36px" variant="primary" size="sm">Request the Briefing</x-import>
-      </a>
-    </nav>
-  </header>
+<section id="home" style="padding:96px var(--container-pad) 80px;max-width:900px;">
+  <div class="eyebrow">Business Agility · AI Adoption</div>
+  <h1 style="font-family:var(--font-display);font-size:var(--text-display-xl);line-height:var(--leading-tight);letter-spacing:-0.01em;margin:0;">We help executive teams turn<br>agility and AI into <em style="color:var(--text-accent);font-style:italic;">board-level outcomes.</em></h1>
+  <p style="font-family:var(--font-sans);font-size:var(--text-body-lg);color:var(--text-secondary);max-width:600px;margin-top:28px;line-height:var(--leading-normal);">We're an advisory team working with executive teams at regulated enterprises — insurance, banking, pharma, telecom, government — on two fronts: rebuilding operating models for real agility, and adopting AI in ways that hold up to board scrutiny.</p>
+  <div style="display:flex;gap:14px;margin-top:36px;">
+    <a href="#contact"><button class="btn btn-primary">Request the Briefing</button></a>
+    <a href="#services"><button class="btn btn-outline">View Services</button></a>
+  </div>
+</section>
 
-  <section id="home" style="padding:96px var(--container-pad) 80px;max-width:900px;">
-    <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-accent);margin-bottom:20px;">Business Agility · AI Adoption</div>
-    <h1 style="font-family:var(--font-display);font-size:var(--text-display-xl);line-height:var(--leading-tight);letter-spacing:-0.01em;margin:0;color:var(--text-primary);">We help executive teams turn<br>agility and AI into <em style="color:var(--text-accent);font-style:italic;">board-level outcomes.</em></h1>
-    <p style="font-family:var(--font-sans);font-size:var(--text-body-lg);color:var(--text-secondary);max-width:600px;margin-top:28px;line-height:var(--leading-normal);">We're an advisory team working with executive teams at regulated enterprises — insurance, banking, pharma, telecom, government — on two fronts: rebuilding operating models for real agility, and adopting AI in ways that hold up to board scrutiny.</p>
-    <div style="display:flex;gap:14px;margin-top:36px;">
-      <a href="#contact" style="text-decoration:none;"><x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Button" hint-size="auto,52px" variant="primary" size="lg">Request the Briefing</x-import></a>
-      <a href="#services" style="text-decoration:none;"><x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Button" hint-size="auto,52px" variant="outline" size="lg">View Services</x-import></a>
+<section style="padding:0 var(--container-pad) 96px;">
+  <div style="display:flex;gap:12px;flex-wrap:wrap;">
+    <span class="badge">Insurance</span><span class="badge">Banking</span><span class="badge">Pharma</span><span class="badge">Telecom</span><span class="badge">Government</span>
+  </div>
+</section>
+
+<section id="about" style="padding:0 var(--container-pad) 96px;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;max-width:1120px;margin:0 auto;">
+  <div>
+    <div class="eyebrow">About</div>
+    <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);margin:0 0 20px;line-height:var(--leading-snug);">A single point of accountability, not a delivery bench.</h2>
+    <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--text-secondary);line-height:var(--leading-normal);margin:0 0 16px;">We work directly with the executive team — no account layer, no junior bench passed off as senior expertise. Every engagement is scoped around a business outcome the board will actually ask about, not a framework rollout for its own sake.</p>
+    <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--text-secondary);line-height:var(--leading-normal);margin:0;">Our work sits across two disciplines: agile operating models for organisations that need to move faster without losing control, and AI adoption for organisations that need to move into agentic AI without losing governance. Most engagements need both at once.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:16px;">
+    <div class="card"><div class="card-eyebrow">Approach</div><div class="card-title">Direct, not delegated</div><p>We lead every engagement personally, from diagnosis to board readout.</p></div>
+    <div class="card"><div class="card-eyebrow">Focus</div><div class="card-title">Regulated industries</div><p>Insurance, banking, pharma, telecom, government — sectors where governance is non-negotiable.</p></div>
+  </div>
+</section>
+
+<section id="services" style="padding:96px var(--container-pad);background:var(--bg-inverse);">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--ink-300);">Services</div>
+    <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);color:var(--paper);margin:0 0 48px;max-width:640px;line-height:var(--leading-snug);">Two disciplines. One accountable advisor.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+      <div style="border:1px solid var(--ink-800);border-radius:var(--radius-md);padding:32px;background:var(--ink-950);">
+        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-300);margin-bottom:12px;">01</div>
+        <h3 style="font-family:var(--font-display);font-size:var(--text-display-sm);color:var(--paper);margin:0 0 12px;">Business Agility</h3>
+        <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--ink-200);line-height:var(--leading-normal);margin:0 0 20px;">Redesigning how large organisations plan, structure and deliver work — so speed doesn't come at the cost of control.</p>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid var(--ink-800);"><span style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--paper);">Agile Transformation</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid var(--ink-800);"><span style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--paper);">Process Improvement</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid var(--ink-800);"><span style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--paper);">Organisational Design</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid var(--ink-800);"><span style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--paper);">Agile Coaching</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid var(--ink-800);"><span style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--paper);">Agile Delivery</span></div>
+      </div>
+      <div style="border:1px solid var(--ink-800);border-radius:var(--radius-md);padding:32px;background:var(--ink-950);">
+        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-300);margin-bottom:12px;">02</div>
+        <h3 style="font-family:var(--font-display);font-size:var(--text-display-sm);color:var(--paper);margin:0 0 12px;">AI Adoption</h3>
+        <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--ink-200);line-height:var(--leading-normal);margin:0 0 20px;">Moving from AI pilots to governed, agentic AI in production — with a path a risk committee will sign off on.</p>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid var(--ink-800);"><span style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--paper);">Agentic AI Strategy</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid var(--ink-800);"><span style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--paper);">AI Adoption Roadmapping</span></div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section style="padding:0 var(--container-pad) 96px;">
-    <div style="display:flex;gap:12px;flex-wrap:wrap;">
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Badge" hint-size="auto,26px">Insurance</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Badge" hint-size="auto,26px">Banking</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Badge" hint-size="auto,26px">Pharma</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Badge" hint-size="auto,26px">Telecom</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Badge" hint-size="auto,26px">Government</x-import>
+<section id="results" style="padding:96px var(--container-pad);max-width:1120px;margin:0 auto;">
+  <div class="eyebrow">Results</div>
+  <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);margin:0 0 48px;max-width:640px;line-height:var(--leading-snug);">Case studies, by request.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <div class="card"><div class="card-eyebrow">Insurance &amp; Banking</div><div class="card-title">Operating model redesign</div><p>Engagements focused on claims and underwriting delivery speed, without loosening control.</p></div>
+    <div class="card"><div class="card-eyebrow">Telecom &amp; Government</div><div class="card-title">Agile transformation at scale</div><p>Multi-hundred-person delivery organisations moved to predictable, board-visible cadences.</p></div>
+    <div class="card"><div class="card-eyebrow">Pharma</div><div class="card-title">Agentic AI adoption</div><p>First production agentic AI use cases, scoped and approved with risk and compliance from day one.</p></div>
+  </div>
+  <p style="font-family:var(--font-sans);font-size:13px;color:var(--text-muted);margin-top:20px;">Detailed case studies and references available under NDA — <a href="#contact">request the briefing</a>.</p>
+</section>
+
+<section id="insights" style="padding:96px var(--container-pad);background:var(--bg-sunken);">
+  <div class="wrap">
+    <div class="eyebrow">Insights</div>
+    <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);margin:0 0 32px;max-width:640px;line-height:var(--leading-snug);">Writing on agility and applied AI — coming soon.</h2>
+    <div style="border:1px dashed var(--border-strong);border-radius:var(--radius-md);padding:48px;text-align:center;">
+      <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--text-muted);margin:0;">First articles are in progress. Check back soon, or subscribe by getting in touch.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="about" style="padding:0 var(--container-pad) 96px;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;max-width:1120px;">
+<section id="contact" style="padding:96px var(--container-pad);max-width:1120px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;">
     <div>
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-accent);margin-bottom:16px;">About</div>
-      <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);color:var(--text-primary);margin:0 0 20px;line-height:var(--leading-snug);">A single point of accountability, not a delivery bench.</h2>
-      <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--text-secondary);line-height:var(--leading-normal);margin:0 0 16px;">We work directly with the executive team — no account layer, no junior bench passed off as senior expertise. Every engagement is scoped around a business outcome the board will actually ask about, not a framework rollout for its own sake.</p>
-      <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--text-secondary);line-height:var(--leading-normal);margin:0;">Our work sits across two disciplines: agile operating models for organisations that need to move faster without losing control, and AI adoption for organisations that need to move into agentic AI without losing governance. Most engagements need both at once.</p>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Card" hint-size="100%,90px" eyebrow="Approach" title="Direct, not delegated">We lead every engagement personally, from diagnosis to board readout.</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Card" hint-size="100%,90px" eyebrow="Focus" title="Regulated industries">Insurance, banking, pharma, telecom, government — sectors where governance is non-negotiable.</x-import>
-    </div>
-  </section>
-
-  <section id="services" style="padding:96px var(--container-pad);background:var(--bg-inverse);">
-    <div style="max-width:1120px;margin:0 auto;">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--oxblood-300, var(--text-accent));margin-bottom:16px;">Services</div>
-      <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);color:var(--paper);margin:0 0 48px;max-width:640px;line-height:var(--leading-snug);">Two disciplines. One accountable advisor.</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
-        <div style="border:1px solid var(--ink-800);border-radius:var(--radius-md);padding:var(--space-6, 32px);background:var(--ink-950);">
-          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-300);margin-bottom:12px;">01</div>
-          <h3 style="font-family:var(--font-display);font-size:var(--text-display-sm);color:var(--paper);margin:0 0 12px;">Business Agility</h3>
-          <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--ink-200);line-height:var(--leading-normal);margin:0 0 20px;">Redesigning how large organisations plan, structure and deliver work — so speed doesn't come at the cost of control.</p>
-          <sc-for list="{{ agilityServices }}" as="item" hint-placeholder-count="5">
-            <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid var(--ink-800);">
-              <span style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--paper);">{{ item }}</span>
-            </div>
-          </sc-for>
-        </div>
-        <div style="border:1px solid var(--ink-800);border-radius:var(--radius-md);padding:var(--space-6, 32px);background:var(--ink-950);">
-          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-300);margin-bottom:12px;">02</div>
-          <h3 style="font-family:var(--font-display);font-size:var(--text-display-sm);color:var(--paper);margin:0 0 12px;">AI Adoption</h3>
-          <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--ink-200);line-height:var(--leading-normal);margin:0 0 20px;">Moving from AI pilots to governed, agentic AI in production — with a path a risk committee will sign off on.</p>
-          <sc-for list="{{ aiServices }}" as="item" hint-placeholder-count="2">
-            <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid var(--ink-800);">
-              <span style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--paper);">{{ item }}</span>
-            </div>
-          </sc-for>
-        </div>
+      <div class="eyebrow">Contact</div>
+      <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);margin:0 0 20px;line-height:var(--leading-snug);">Request the briefing.</h2>
+      <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--text-secondary);line-height:var(--leading-normal);margin:0 0 28px;max-width:440px;">Tell us a little about the challenge and the sector. We respond personally, usually within two business days.</p>
+      <div style="font-family:var(--font-mono);font-size:13px;color:var(--text-secondary);line-height:2;">
+        <div>hello@wynwin.com</div>
+        <div><a href="https://www.linkedin.com/company/wynwin/">linkedin.com/company/wynwin</a></div>
       </div>
     </div>
-  </section>
+    <form style="display:flex;flex-direction:column;gap:20px;" onsubmit="event.preventDefault();alert('Thanks — this form is a prototype and is not yet wired to send.');">
+      <div class="field"><label>Name</label><input type="text" placeholder="Your full name"></div>
+      <div class="field"><label>Work email</label><input type="email" placeholder="you@company.com"></div>
+      <div class="field"><label>Company / Sector</label><input type="text" placeholder="e.g. Regional Bank"></div>
+      <div class="field"><label>What's the challenge?</label><input type="text" placeholder="A sentence or two is enough"></div>
+      <button type="submit" class="btn btn-primary" style="width:fit-content;">Submit Request</button>
+    </form>
+  </div>
+</section>
 
-  <section id="results" style="padding:96px var(--container-pad);max-width:1120px;margin:0 auto;">
-    <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-accent);margin-bottom:16px;">Results</div>
-    <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);color:var(--text-primary);margin:0 0 48px;max-width:640px;line-height:var(--leading-snug);">Case studies, by request.</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Card" hint-size="100%,160px" eyebrow="Insurance &amp; Banking" title="Operating model redesign">Engagements focused on claims and underwriting delivery speed, without loosening control.</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Card" hint-size="100%,160px" eyebrow="Telecom &amp; Government" title="Agile transformation at scale">Multi-hundred-person delivery organisations moved to predictable, board-visible cadences.</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Card" hint-size="100%,160px" eyebrow="Pharma" title="Agentic AI adoption">First production agentic AI use cases, scoped and approved with risk and compliance from day one.</x-import>
-    </div>
-    <p style="font-family:var(--font-sans);font-size:13px;color:var(--text-muted);margin-top:20px;">Detailed case studies and references available under NDA — <a href="#contact" style="color:var(--text-accent);">request the briefing</a>.</p>
-  </section>
+<footer style="padding:40px var(--container-pad);border-top:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;font-family:var(--font-mono);font-size:11px;color:var(--text-muted);letter-spacing:0.04em;">
+  <span>© 2026 WynWin — Business Agility &amp; AI Adoption</span>
+  <span>Insurance · Banking · Pharma · Telecom · Government</span>
+</footer>
 
-  <section id="insights" style="padding:96px var(--container-pad);background:var(--bg-sunken);">
-    <div style="max-width:1120px;margin:0 auto;">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-accent);margin-bottom:16px;">Insights</div>
-      <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);color:var(--text-primary);margin:0 0 32px;max-width:640px;line-height:var(--leading-snug);">Writing on agility and applied AI — coming soon.</h2>
-      <div style="border:1px dashed var(--border-strong);border-radius:var(--radius-md);padding:48px;text-align:center;">
-        <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--text-muted);margin:0;">First articles are in progress. Check back soon, or subscribe by getting in touch.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" style="padding:96px var(--container-pad);max-width:1120px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;">
-      <div>
-        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-accent);margin-bottom:16px;">Contact</div>
-        <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);color:var(--text-primary);margin:0 0 20px;line-height:var(--leading-snug);">Request the briefing.</h2>
-        <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--text-secondary);line-height:var(--leading-normal);margin:0 0 28px;max-width:440px;">Tell us a little about the challenge and the sector. We respond personally, usually within two business days.</p>
-        <div style="font-family:var(--font-mono);font-size:13px;color:var(--text-secondary);line-height:2;">
-          <div>hello@wynwin.com</div>
-          <div><a href="https://www.linkedin.com/company/wynwin/" style="color:var(--text-accent);">linkedin.com/company/wynwin</a></div>
-        </div>
-      </div>
-      <form style="display:flex;flex-direction:column;gap:20px;" onsubmit="{{ handleSubmit }}">
-        <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Input" hint-size="100%,64px" label="Name" placeholder="Your full name"></x-import>
-        <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Input" hint-size="100%,64px" label="Work email" placeholder="you@company.com" type="email"></x-import>
-        <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Input" hint-size="100%,64px" label="Company / Sector" placeholder="e.g. Regional Bank"></x-import>
-        <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Input" hint-size="100%,64px" label="What's the challenge?" placeholder="A sentence or two is enough"></x-import>
-        <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Button" hint-size="auto,52px" variant="primary" size="lg">Submit Request</x-import>
-      </form>
-    </div>
-  </section>
-
-  <footer style="padding:40px var(--container-pad);border-top:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;font-family:var(--font-mono);font-size:11px;color:var(--text-muted);letter-spacing:0.04em;">
-    <span>© 2026 WynWin — Business Agility &amp; AI Adoption</span>
-    <span>Insurance · Banking · Pharma · Telecom · Government</span>
-  </footer>
-
-</div>
-
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  renderVals() {
-    return {
-      agilityServices: ['Agile Transformation', 'Process Improvement', 'Organisational Design', 'Agile Coaching', 'Agile Delivery'],
-      aiServices: ['Agentic AI Strategy', 'AI Adoption Roadmapping'],
-      handleSubmit: (e) => { e.preventDefault(); alert('Thanks — this form is a prototype and is not yet wired to send.'); }
-    };
-  }
-}
-</script>
 </body>
 </html>
