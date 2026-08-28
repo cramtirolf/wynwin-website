@@ -1,174 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>WynWin — Business Agility &amp; AI Adoption</title>
+<meta name="description" content="WynWin advises executive teams on business agility and AI adoption across insurance, banking, pharma, telecom and government.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--ink-950:oklch(0.16 0.018 265);--ink-900:oklch(0.21 0.02 265);--ink-800:oklch(0.28 0.018 265);
+--ink-700:oklch(0.37 0.016 265);--ink-600:oklch(0.47 0.014 265);--ink-500:oklch(0.57 0.012 265);
+--ink-400:oklch(0.67 0.01 265);--ink-300:oklch(0.78 0.008 265);--ink-200:oklch(0.88 0.006 265);
+--ink-100:oklch(0.94 0.004 265);--ink-50:oklch(0.975 0.003 90);--paper:oklch(0.985 0.005 90);
+--oxblood-700:oklch(0.32 0.135 25);--oxblood-600:oklch(0.40 0.155 25);--oxblood-500:oklch(0.47 0.165 25);
+--oxblood-100:oklch(0.93 0.03 25);
+--bg-sunken:var(--ink-50);--bg-inverse:var(--ink-950);
+--text-primary:var(--ink-950);--text-secondary:var(--ink-600);--text-muted:var(--ink-400);
+--text-accent:var(--oxblood-600);--border-subtle:var(--ink-100);--border-strong:var(--ink-700);
+--accent-primary:var(--oxblood-600);--accent-primary-hover:var(--oxblood-700);
+--font-display:'Newsreader',Georgia,serif;--font-sans:'Archivo',Helvetica,Arial,sans-serif;
+--font-mono:'IBM Plex Mono',ui-monospace,monospace;
+--text-display-xl:4.25rem;--text-display-md:2rem;--text-display-sm:1.5rem;--text-body-lg:1.125rem;--text-body-md:1rem;
+--leading-tight:1.1;--leading-snug:1.3;--leading-normal:1.55;
+--radius-xs:2px;--radius-md:6px;--container-pad:clamp(24px,4vw,64px);--content-max:1120px;
+--duration-base:180ms;--ease-standard:cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--paper);color:var(--text-primary);font-family:var(--font-sans);}
+a{color:var(--text-accent);text-decoration:none;}
+a:hover{color:var(--accent-primary-hover);}
+.wrap{max-width:var(--content-max);margin:0 auto;}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-accent);margin-bottom:16px;}
+.btn{font-family:var(--font-sans);font-weight:600;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;border-radius:var(--radius-xs);border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;padding:16px 30px;transition:background var(--duration-base) var(--ease-standard),color var(--duration-base) var(--ease-standard),border-color var(--duration-base) var(--ease-standard);}
+.btn-primary{background:var(--accent-primary);color:var(--paper);}
+.btn-primary:hover{background:var(--accent-primary-hover);color:var(--paper);}
+.btn-outline{background:transparent;color:var(--text-primary);border-color:var(--border-strong);}
+.btn-outline:hover{background:var(--ink-50);}
+.btn-sm{padding:8px 16px;font-size:12px;}
+.badge{font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);border:1px solid var(--border-subtle);border-radius:var(--radius-xs);padding:5px 12px;display:inline-block;}
+.card{border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:20px 24px;background:#fff;}
+.card .card-eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-accent);margin-bottom:8px;}
+.card .card-title{font-family:var(--font-display);font-size:1.15rem;margin:0 0 6px;}
+.card p{font-family:var(--font-sans);font-size:14px;color:var(--text-secondary);margin:0;line-height:1.5;}
+.field{display:flex;flex-direction:column;gap:6px;}
+.field label{font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--text-primary);}
+.field input{font-family:var(--font-sans);font-size:15px;padding:14px 16px;border:1px solid var(--ink-200);border-radius:var(--radius-xs);background:#fff;color:var(--text-primary);}
+.field input:focus{outline:none;border-color:var(--oxblood-500);box-shadow:0 0 0 3px var(--oxblood-100);}
+</style>
 </head>
 <body>
-<x-dc>
-<template id="__bundler_thumbnail" data-bg-color="#f5f1ea">
-  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <rect width="200" height="200" fill="#f5f1ea"/>
-    <text x="30" y="115" font-family="Georgia,serif" font-size="40" fill="#1a1a1a">Wyn</text>
-    <text x="30" y="155" font-family="Georgia,serif" font-size="40" fill="#7a1f1f">Win</text>
-  </svg>
-</template>
-<helmet>
-  <link rel="stylesheet" href="_ds/wynwin-branding-fcabcba5-1332-4ca0-aa86-2f6adac65e5d/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/wynwin-branding-fcabcba5-1332-4ca0-aa86-2f6adac65e5d/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/wynwin-branding-fcabcba5-1332-4ca0-aa86-2f6adac65e5d/tokens/spacing.css">
-  <link rel="stylesheet" href="_ds/wynwin-branding-fcabcba5-1332-4ca0-aa86-2f6adac65e5d/tokens/effects.css">
-  <link rel="stylesheet" href="_ds/wynwin-branding-fcabcba5-1332-4ca0-aa86-2f6adac65e5d/styles.css">
-  <script src="_ds/wynwin-branding-fcabcba5-1332-4ca0-aa86-2f6adac65e5d/_ds_bundle.js"></script>
-  <style>
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);}
-    a{color:var(--text-accent)}
-    a:hover{color:var(--accent-primary-hover)}
-  </style>
-</helmet>
 
-<div style="background:var(--paper);min-height:100%;">
-
-  <header style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:20px var(--container-pad);border-bottom:1px solid var(--border-subtle);background:var(--paper);">
-    <a href="#home" style="display:flex;align-items:center;gap:16px;">
-      <img src="assets/logo-mark.svg" alt="" style="height:90px;">
-      <img src="assets/logo-wordmark.png" alt="WynWin" style="height:49px;">
-    </a>
-    <nav style="display:flex;gap:30px;align-items:center;">
-      <a href="#about" style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-primary);text-decoration:none;">About</a>
-      <a href="#services" style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-primary);text-decoration:none;">Services</a>
-      <a href="#results" style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-primary);text-decoration:none;">Results</a>
-      <a href="#insights" style="font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-primary);text-decoration:none;">Insights</a>
-      <a href="#contact" style="text-decoration:none;">
-        <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Button" hint-size="auto,36px" variant="primary" size="sm">Request the Briefing</x-import>
-      </a>
-    </nav>
-  </header>
-
-  <section id="home" style="padding:96px var(--container-pad) 80px;max-width:900px;">
-    <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-accent);margin-bottom:20px;">Business Agility · AI Adoption</div>
-    <h1 style="font-family:var(--font-display);font-size:var(--text-display-xl);line-height:var(--leading-tight);letter-spacing:-0.01em;margin:0;color:var(--text-primary);">We help executive teams turn<br>agility and AI into <em style="color:var(--text-accent);font-style:italic;">board-level outcomes.</em></h1>
-    <p style="font-family:var(--font-sans);font-size:var(--text-body-lg);color:var(--text-secondary);max-width:600px;margin-top:28px;line-height:var(--leading-normal);">We're an advisory team working with executive teams at regulated enterprises — insurance, banking, pharma, telecom, government — on two fronts: rebuilding operating models for real agility, and adopting AI in ways that hold up to board scrutiny.</p>
-    <div style="display:flex;gap:14px;margin-top:36px;">
-      <a href="#contact" style="text-decoration:none;"><x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Button" hint-size="auto,52px" variant="primary" size="lg">Request the Briefing</x-import></a>
-      <a href="#services" style="text-decoration:none;"><x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Button" hint-size="auto,52px" variant="outline" size="lg">View Services</x-import></a>
-    </div>
-  </section>
-
-  <section style="padding:0 var(--container-pad) 96px;">
-    <div style="display:flex;gap:12px;flex-wrap:wrap;">
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Badge" hint-size="auto,26px">Insurance</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Badge" hint-size="auto,26px">Banking</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Badge" hint-size="auto,26px">Pharma</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Badge" hint-size="auto,26px">Telecom</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Badge" hint-size="auto,26px">Government</x-import>
-    </div>
-  </section>
-
-  <section id="about" style="padding:0 var(--container-pad) 96px;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;max-width:1120px;">
-    <div>
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-accent);margin-bottom:16px;">About</div>
-      <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);color:var(--text-primary);margin:0 0 20px;line-height:var(--leading-snug);">A single point of accountability, not a delivery bench.</h2>
-      <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--text-secondary);line-height:var(--leading-normal);margin:0 0 16px;">We work directly with the executive team — no account layer, no junior bench passed off as senior expertise. Every engagement is scoped around a business outcome the board will actually ask about, not a framework rollout for its own sake.</p>
-      <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--text-secondary);line-height:var(--leading-normal);margin:0;">Our work sits across two disciplines: agile operating models for organisations that need to move faster without losing control, and AI adoption for organisations that need to move into agentic AI without losing governance. Most engagements need both at once.</p>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Card" hint-size="100%,90px" eyebrow="Approach" title="Direct, not delegated">We lead every engagement personally, from diagnosis to board readout.</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Card" hint-size="100%,90px" eyebrow="Focus" title="Regulated industries">Insurance, banking, pharma, telecom, government — sectors where governance is non-negotiable.</x-import>
-    </div>
-  </section>
-
-  <section id="services" style="padding:96px var(--container-pad);background:var(--bg-inverse);">
-    <div style="max-width:1120px;margin:0 auto;">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--oxblood-300, var(--text-accent));margin-bottom:16px;">Services</div>
-      <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);color:var(--paper);margin:0 0 48px;max-width:640px;line-height:var(--leading-snug);">Two disciplines. One accountable advisor.</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
-        <div style="border:1px solid var(--ink-800);border-radius:var(--radius-md);padding:var(--space-6, 32px);background:var(--ink-950);">
-          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-300);margin-bottom:12px;">01</div>
-          <h3 style="font-family:var(--font-display);font-size:var(--text-display-sm);color:var(--paper);margin:0 0 12px;">Business Agility</h3>
-          <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--ink-200);line-height:var(--leading-normal);margin:0 0 20px;">Redesigning how large organisations plan, structure and deliver work — so speed doesn't come at the cost of control.</p>
-          <sc-for list="{{ agilityServices }}" as="item" hint-placeholder-count="5">
-            <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid var(--ink-800);">
-              <span style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--paper);">{{ item }}</span>
-            </div>
-          </sc-for>
-        </div>
-        <div style="border:1px solid var(--ink-800);border-radius:var(--radius-md);padding:var(--space-6, 32px);background:var(--ink-950);">
-          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-300);margin-bottom:12px;">02</div>
-          <h3 style="font-family:var(--font-display);font-size:var(--text-display-sm);color:var(--paper);margin:0 0 12px;">AI Adoption</h3>
-          <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--ink-200);line-height:var(--leading-normal);margin:0 0 20px;">Moving from AI pilots to governed, agentic AI in production — with a path a risk committee will sign off on.</p>
-          <sc-for list="{{ aiServices }}" as="item" hint-placeholder-count="2">
-            <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-top:1px solid var(--ink-800);">
-              <span style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--paper);">{{ item }}</span>
-            </div>
-          </sc-for>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="results" style="padding:96px var(--container-pad);max-width:1120px;margin:0 auto;">
-    <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-accent);margin-bottom:16px;">Results</div>
-    <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);color:var(--text-primary);margin:0 0 48px;max-width:640px;line-height:var(--leading-snug);">Case studies, by request.</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Card" hint-size="100%,160px" eyebrow="Insurance &amp; Banking" title="Operating model redesign">Engagements focused on claims and underwriting delivery speed, without loosening control.</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Card" hint-size="100%,160px" eyebrow="Telecom &amp; Government" title="Agile transformation at scale">Multi-hundred-person delivery organisations moved to predictable, board-visible cadences.</x-import>
-      <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Card" hint-size="100%,160px" eyebrow="Pharma" title="Agentic AI adoption">First production agentic AI use cases, scoped and approved with risk and compliance from day one.</x-import>
-    </div>
-    <p style="font-family:var(--font-sans);font-size:13px;color:var(--text-muted);margin-top:20px;">Detailed case studies and references available under NDA — <a href="#contact" style="color:var(--text-accent);">request the briefing</a>.</p>
-  </section>
-
-  <section id="insights" style="padding:96px var(--container-pad);background:var(--bg-sunken);">
-    <div style="max-width:1120px;margin:0 auto;">
-      <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-accent);margin-bottom:16px;">Insights</div>
-      <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);color:var(--text-primary);margin:0 0 32px;max-width:640px;line-height:var(--leading-snug);">Writing on agility and applied AI — coming soon.</h2>
-      <div style="border:1px dashed var(--border-strong);border-radius:var(--radius-md);padding:48px;text-align:center;">
-        <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--text-muted);margin:0;">First articles are in progress. Check back soon, or subscribe by getting in touch.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" style="padding:96px var(--container-pad);max-width:1120px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;">
-      <div>
-        <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-accent);margin-bottom:16px;">Contact</div>
-        <h2 style="font-family:var(--font-display);font-size:var(--text-display-md);color:var(--text-primary);margin:0 0 20px;line-height:var(--leading-snug);">Request the briefing.</h2>
-        <p style="font-family:var(--font-sans);font-size:var(--text-body-md);color:var(--text-secondary);line-height:var(--leading-normal);margin:0 0 28px;max-width:440px;">Tell us a little about the challenge and the sector. We respond personally, usually within two business days.</p>
-        <div style="font-family:var(--font-mono);font-size:13px;color:var(--text-secondary);line-height:2;">
-          <div>hello@wynwin.com</div>
-          <div><a href="https://www.linkedin.com/company/wynwin/" style="color:var(--text-accent);">linkedin.com/company/wynwin</a></div>
-        </div>
-      </div>
-      <form style="display:flex;flex-direction:column;gap:20px;" onsubmit="{{ handleSubmit }}">
-        <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Input" hint-size="100%,64px" label="Name" placeholder="Your full name"></x-import>
-        <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Input" hint-size="100%,64px" label="Work email" placeholder="you@company.com" type="email"></x-import>
-        <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Input" hint-size="100%,64px" label="Company / Sector" placeholder="e.g. Regional Bank"></x-import>
-        <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Input" hint-size="100%,64px" label="What's the challenge?" placeholder="A sentence or two is enough"></x-import>
-        <x-import component-from-global-scope="WynWinDesignSystem_fcabcb.Button" hint-size="auto,52px" variant="primary" size="lg">Submit Request</x-import>
-      </form>
-    </div>
-  </section>
-
-  <footer style="padding:40px var(--container-pad);border-top:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;font-family:var(--font-mono);font-size:11px;color:var(--text-muted);letter-spacing:0.04em;">
-    <span>© 2026 WynWin — Business Agility &amp; AI Adoption</span>
-    <span>Insurance · Banking · Pharma · Telecom · Government</span>
-  </footer>
-
-</div>
-
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  renderVals() {
-    return {
-      agilityServices: ['Agile Transformation', 'Process Improvement', 'Organisational Design', 'Agile Coaching', 'Agile Delivery'],
-      aiServices: ['Agentic AI Strategy', 'AI Adoption Roadmapping'],
-      handleSubmit: (e) => { e.preventDefault(); alert('Thanks — this form is a prototype and is not yet wired to send.'); }
-    };
-  }
-}
-</script>
-</body>
-</html>
+<header style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:20px var(--container-pad);border-bottom:1px solid var(--border-subtle);background:var(--paper);">
+  <a href="#home" style="display:flex;align-items:center;gap:16px;">
+    <svg width="90" height="90" viewBox="-14 -14 160 160" fill="none" aria-hidden="true">
+      <rect x="6" y="42" width="80" height="80" rx="11" stroke="#c24a3d" stroke-width="7"/>
+      <path d="M24 122 L23 132 L38 122" fill="#c24a3d"/>
+      <rect x="58" y="4" width="56" height="56" rx="8" stroke="#191c22" stroke-width="7"/>
+      <path d="M90 60 L101 60 L101 71 Z" fill="#191c22"/>
+      <rect x="44" y="-6.56" width="26.4" height="26.4" rx="6" stroke="#191c22" stroke-width="4.8"/>
+      <rect x="96" y="108" width="19.2" height="19.2" rx="4.8" stroke="#c24a3d" stroke-width="4.8"/>
+    </svg>
+    <img src="data:image/png;base64,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
+I
